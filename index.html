@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>HBDMBW45</title>
+  <style>
+    body {
+      background: #335;
+      color: #668;
+      font-family: Pushster, cursive;
+      font: bold 150%/1 Pushster, cursive;
+      word-wrap: break-word;
+      margin: -10px;
+      overflow: hidden;
+      user-select: none;
+    }
+    main {
+      transform: rotateZ(-1deg) scale(1.15);
+    }
+    span {
+      margin: 0 0.1em;
+      transition: all 750ms;
+    }
+    .f {
+      color: #fff;
+      text-shadow: 0 0 10px currentColor;
+      transition: all 200ms;
+      transform: scale(1.1);
+    }
+    .f2 { color: #f15bb5; }
+    .f3 { color: #fee440; }
+    .f4 { color: #00bbf9; }
+    .f5 { color: #00f5d4; }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<noscript style="margin: 3em">Get your script on.</noscript>
+<main></main>
+<script>
+
+function reportWindowSize() {
+  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+  const n = (vh / 24) * (vw / 102);
+  const str = document.createElement("div");
+  const tmpl = `<span data-m="HBDMBW45">HBDMBW45</span>`;
+  let out = "";
+  for (i=0; i<n; i++) {
+    out+= tmpl;
+  }
+  str.innerHTML = out;
+  document.querySelector("main").innerHTML = "";
+  document.querySelector("main").appendChild(str);
+  const s = document.querySelectorAll("span");
+  setInterval(() => {
+    const limit = ~~(Math.random() * (s.length * 0.01));
+    for (i=0; i<limit; i++) {
+      let r = ~~(Math.random() * s.length) + 1;
+      let x = s[r];
+      let c = 'f' + (~~(Math.random() * limit) + 1);
+      setTimeout(() => {
+        x.classList.add('f', c);
+        setTimeout(() => {
+          x.removeAttribute('class');
+        }, 500);
+      }, 100 * i);
+    }
+  }, 850);
+}
+
+window.onresize = reportWindowSize;
+reportWindowSize();
+</script>
+</body>
+</html>
