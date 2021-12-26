@@ -10,12 +10,9 @@
       font-family: Pushster, cursive;
       font: bold 150%/1 Pushster, cursive;
       word-wrap: break-word;
-      margin: -10px;
+      margin: -10px -30px;
       overflow: hidden;
       user-select: none;
-    }
-    main {
-      transform: rotateZ(-1deg) scale(1.15);
     }
     span {
       margin: 0 0.1em;
@@ -74,6 +71,15 @@ function reportWindowSize() {
 
 window.onresize = reportWindowSize;
 reportWindowSize();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-7274649-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-7274649-3');
 </script>
 </body>
 </html>
